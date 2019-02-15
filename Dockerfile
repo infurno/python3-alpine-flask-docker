@@ -1,5 +1,4 @@
 FROM python:3-alpine
-MAINTAINER Hal Borland <hal@borlandtech.com>
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -7,7 +6,9 @@ ARG VCS_REF
 # Set labels (see https://microbadger.com/labels)
 LABEL org.label-schema.build-date=$BUILD_DATE \
   org.label-schema.vcs-ref=$VCS_REF \
-  org.label-schema.vcs-url="https://github.com/infurno/python3-alpine-flask-docker"
+  org.label-schema.vcs-url="https://github.com/infurno/python3-alpine-flask-docker" 
+# Setup maintainer
+LABEL maintainer="hal@borlandtech.com"
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
